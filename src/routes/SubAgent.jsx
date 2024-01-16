@@ -1,11 +1,10 @@
-import React from 'react'
+import React, { useState }from 'react'
 
 function SubAgent() {
 
-  const [input, setInput] = React.useState({});
+  const [input, setInput] = useState({});
 
-
-
+  
   function sendResponse (e) {
     console.log(input)
     e.preventDefault();
@@ -14,7 +13,7 @@ function SubAgent() {
 
   return (
     <div className='mt-14 flex justify-center'>
-      <form action='submit' onSubmit={(e)=> {sendResponse(e)}} className="w-full max-w-5xl">
+      <form action='submit' onSubmit={(e)=> {sendResponse(e)}} className="">
   <div className="flex flex-wrap -mx-3 mb-6">
     <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
       <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-num-tar">

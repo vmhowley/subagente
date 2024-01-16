@@ -10,9 +10,8 @@ function App() {
   return (
     <>
       <Router>
+        <div className="flex">
         <SideBar/>
-        <Navbar/>
-        <div className="ml-72">
         <Routes>
           <Route path="/" element={<Home/>} />
           <Route path="/sub_agent" element={<SubAgent/>} />

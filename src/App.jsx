@@ -4,12 +4,14 @@ import "./App.css";
 import Home from "./routes/Home";
 import SideBar from "./components/SideBar";
 import SubAgent from "./routes/SubAgent";
+import Navbar from "./components/NavBar";
 
 function App() {
   return (
     <>
       <Router>
         <SideBar/>
+        <Navbar/>
         <div className="ml-72">
         <Routes>
           <Route path="/" element={<Home/>} />

@@ -3,9 +3,3 @@
 @tailwind components;
 @tailwind utilities;
 
-body,html {
-    padding-left: 8%;
-    padding-top: 10px;
-    margin: 0 auto; 
-    display: block;
-}

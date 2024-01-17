@@ -23,8 +23,8 @@ function SubAgent() {
 };
 
   return (
-    <div className='flex  mt-14 w-screen justify-center h-2'>
-      <form id='formu' action='submit' onSubmit={(e)=> {sendResponse(e)}} className="w-max max-w-6xl ">
+    <div className='flex  mt-14 w-screen justify-center h-2 z-30 '>
+      <form id='formu' action='submit' onSubmit={(e)=> {sendResponse(e)}} className="w-max max-w-6xl h-max rounded-lg bg-white">
   <div className="flex flex-wrap -mx-3 mb-6">
     <div className="w-max md:w-1/2 px-3 mb-6 md:mb-0">
       <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-num-tar">

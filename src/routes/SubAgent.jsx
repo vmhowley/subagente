@@ -1,21 +1,32 @@
-import React, { useState }from 'react'
+import React from 'react'
 
 function SubAgent() {
 
-  const [input, setInput] = useState({});
-
+  const [input, setInput] = React.useState({});
   
-  function sendResponse (e) {
+
+
+  const sendResponse = (e) => {
     console.log(input)
     e.preventDefault();
     alert(`Esta es la tarjeta que ingresaste ${input.numta} con esta fecha ${input.fec_venc}`)
+    document.querySelector('#formu').reset();
   }
+  const handleChange = (e) => {
+    // Here we are checking if the length is equal to 10
+    if (e.target.value.length === 4) {
+      console.log(e.target.value)
+      document.getElementById('afil').focus()
+      
+    }
+    setInput({...input, fec_venc: e.target.value});
+};
 
   return (
-    <div className='mt-14 flex justify-center'>
-      <form action='submit' onSubmit={(e)=> {sendResponse(e)}} className="">
+    <div className='flex  mt-14 w-screen justify-center h-2'>
+      <form id='formu' action='submit' onSubmit={(e)=> {sendResponse(e)}} className="w-max max-w-6xl ">
   <div className="flex flex-wrap -mx-3 mb-6">
-    <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+    <div className="w-max md:w-1/2 px-3 mb-6 md:mb-0">
       <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-num-tar">
         Numero de Tarjeta
       </label>
@@ -25,13 +36,13 @@ function SubAgent() {
       <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-fec-ven">
         Fecha de Vencimiento
       </label>
-      <input onChange={(e)=> {setInput({...input, fec_venc: e.target.value})}} className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-fec-ven" type="number" placeholder="12/24"/>
+      <input  onChange={e => {handleChange(e)}} className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="fec" type="number"  placeholder="12/24"/>
     </div>
     <div className="w-full md:w-1/2 px-3">
       <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-afil">
         Afiliado
       </label>
-      <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="name" name='name' autoComplete='name' type="text" placeholder="..."/>
+      <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="afil" name='afil' autoComplete='name' type="text" placeholder="..."/>
     </div>
     <div className="w-full md:w-1/2 px-3">
       <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-cat">
@@ -53,8 +64,8 @@ function SubAgent() {
     </div>  
       <input className='bg-slate-400 relative left-3 w-28 h-8 rounded-lg mt-2' type='submit' value='submit'/>
     </div>
-    <div className='bg-neutral-300 h-80 rounded-xl'>
-      <p id='response' className='p-6 font-semibold'>{input.numta}</p>
+    <div className=''>
+      <p id='response' className='p-6 font-semibold'></p>
     </div>
   </form>
     </div>

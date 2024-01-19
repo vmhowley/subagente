@@ -2,7 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: urbanist;
+    src: url(./assets/fonts/Urbanist-VariableFont_wght.ttf);
+}
+
 body{
+    display: block;
+    padding: 0;
+    margin: 0 auto;
+    font-family: urbanist;
     padding: 0;
     margin: 0;
     background: rgb(248, 248, 248);

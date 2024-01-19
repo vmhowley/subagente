@@ -10,7 +10,7 @@ function SubAgent() {
     console.log(input)
     e.preventDefault();
     alert(`Esta es la tarjeta que ingresaste ${input.numta} con esta fecha ${input.fec_venc}`)
-    document.querySelector('#formu').reset();
+    document.querySelector('#htmlFormu').reset();
   }
   const handleChange = (e) => {
     // Here we are checking if the length is equal to 10
@@ -23,51 +23,65 @@ function SubAgent() {
 };
 
   return (
-    <div className='flex  mt-14 w-screen justify-center h-2 z-30 '>
-      <form id='formu' action='submit' onSubmit={(e)=> {sendResponse(e)}} className="w-max max-w-6xl h-max rounded-lg bg-white">
+    <div className='flex justify-center'>
+      <form className="w-full sm:max-w-xl bg-white p-6 rounded-md fixed">
   <div className="flex flex-wrap -mx-3 mb-6">
-    <div className="w-max md:w-1/2 px-3 mb-6 md:mb-0">
-      <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-num-tar">
-        Numero de Tarjeta
+    <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+      <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-first-name">
+        First Name
       </label>
-      <input autoComplete="cc-number" name='cc-number' className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" onChange={(e)=> {setInput({...input, numta: e.target.value})}} id="r" type="number" placeholder="xxxx xxxx xxxx xxxx"/>
+      <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="Jane"/>
+      <p className="text-red-500 text-xs italic">Please fill out this field.</p>
     </div>
     <div className="w-full md:w-1/2 px-3">
-      <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-fec-ven">
-        Fecha de Vencimiento
+      <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-last-name">
+        Last Name
       </label>
-      <input  onChange={e => {handleChange(e)}} className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="fec" type="number"  placeholder="12/24"/>
+      <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Doe"/>
     </div>
-    <div className="w-full md:w-1/2 px-3">
-      <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-afil">
-        Afiliado
+  </div>
+  <div className="flex flex-wrap -mx-3 mb-6">
+    <div className="w-full px-3">
+      <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
+        Password
       </label>
-      <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="afil" name='afil' autoComplete='name' type="text" placeholder="..."/>
+      <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-password" type="password" placeholder="******************"/>
+      <p className="text-gray-600 text-xs italic">Make it as long and as crazy as you'd like</p>
     </div>
-    <div className="w-full md:w-1/2 px-3">
-      <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-cat">
-        Categoria
+  </div>
+  <div className="flex flex-wrap -mx-3 mb-2">
+    <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+      <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-city">
+        City
       </label>
-      <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-cat" type="text" placeholder="..."/>
+      <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-city" type="text" placeholder="Albuquerque"/>
     </div>
-    <div className="w-full md:w-1/2 px-3">
-      <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-monto-trans">
-        Monto de Transaccion
+    <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+      <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-state">
+        State
       </label>
-      <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-monto-tras" type="text" placeholder="..."/>
+      <div className="relative">
+        <select className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
+          <option>New Mexico</option>
+          <option>Missouri</option>
+          <option>Texas</option>
+        </select>
+        <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+          <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+        </div>
+      </div>
     </div>
-    <div className="w-full md:w-1/2 px-3">
-      <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-cvv2">
-        Cvv2
+    <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+      <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-zip">
+        Zip
       </label>
-      <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-cvv2" type="password" placeholder="..."/>
-    </div>  
-      <input className='bg-slate-400 relative left-3 w-28 h-8 rounded-lg mt-2' type='submit' value='submit'/>
+      <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-zip" type="text" placeholder="90210"/>
     </div>
-    <div className=''>
-      <p id='response' className='p-6 font-semibold'></p>
-    </div>
-  </form>
+  </div>
+  <div className='flex  justify-center mt-6'>
+  <button className='bg-slate-300 bg-opacity-50 rounded-md h-10 w-20' type='submit' value='submit' >Submit</button>
+  </div>
+</form>
     </div>
   )
 }

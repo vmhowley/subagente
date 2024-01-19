@@ -1,21 +1,34 @@
-import React from 'react'
+import React from "react";
+import { useLocation } from "react-router-dom";
 
-import vitelogo from '../assets/react.svg'
+
 function Navbar() {
+  const location = useLocation();
+  let Location ;
+  if (location.pathname == '/')
+  {   
+    Location = 'Dashboard'; 
+  }else{
+    if(location.pathname == '/sub_agent'){
+      Location = 'Sub Agentes'
+    }
+  }
   return (
-    <header className='p-6'>
-      <nav className='flex justify-between'>
-        <div className=' transition-all opacity-0  sm:opacity-100 flex-col xl:relative xl:translate-x-72  '>
-          <div className='flex gap-1'>
-            <p className='text-neutral-500'>Pages / </p>
-          <h1> Dashboard</h1>
+    <header className="p-6  ">
+      <nav className="flex justify-between">
+        <div className="transition-all  sm:translate-x-0 flex-col  xl:translate-x-72  text-white font-extralight">
+          <div className="flex gap-1 ">
+            <p className="text-zinc-200">Pages  </p>
+            <h1>  /{Location}</h1>
           </div>
-          <h1 className='font-bold'>Dashboard</h1>
+          <h1 className="font-bold text-lg">{Location}</h1>
         </div>
-        <div className=' sm:flex  xl:-translate-y-0 overflow-y-auto antialiased transition-opacity duration-500 -translate-x-full   xl:opacity-0 cursor-pointer '>&#9776;</div>
+        <div className="font-extrabold text-white text-2xl sm:flex  xl:-translate-y-0 overflow-y-auto antialiased transition-opacity duration-500 -translate-x-full   xl:opacity-0 cursor-pointer ">
+          &#9776;
+        </div>
       </nav>
     </header>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;

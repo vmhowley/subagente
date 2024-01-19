@@ -9,7 +9,7 @@ function App() {
   return (
     <>
       <Router>
-        <div className="bg-gradient-to-t from-black to-red-800 w-full h-80 absolute top-0 left-0 z-0 "></div>
+        <div className="bg-gradient-radial to-black via-red-950 from-red-800 w-full h-80 absolute top-0 left-0 z-0 opacity-95"></div>
         <SideBar/>
         <Navbar />
         <div className="xl:pl-72 w-full p-6">

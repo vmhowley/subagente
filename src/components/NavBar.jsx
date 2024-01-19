@@ -14,9 +14,9 @@ function Navbar() {
     }
   }
   return (
-    <header className="p-6  ">
+    <header className="p-6 z-50">
       <nav className="flex justify-between">
-        <div className="transition-all  sm:translate-x-0 flex-col  xl:translate-x-72  text-white font-extralight">
+        <div className="transition-all  sm:translate-x-0 flex-col  xl:translate-x-72 z-50 text-white font-extralight">
           <div className="flex gap-1 ">
             <p className="text-zinc-200">Pages  </p>
             <h1>  /{Location}</h1>

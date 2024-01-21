@@ -19,7 +19,7 @@ npm install
 ## Usage
 
 ```sh
-npm run dev
+npm run dev 
 ```
 
 ## Run tests

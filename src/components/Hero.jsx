@@ -2,7 +2,7 @@ import React from "react";
 import LocalAtmIcon from "@mui/icons-material/LocalAtm";
 function Hero() {
   return (
-    <div className=" pl-6 relative gap-3 grid sm:grid-cols-2 xl:flex justify-around">
+    <div className=" relative gap-3 grid sm:grid-cols-2 xl:flex justify-around">
       <div className=" p-4 bg-white h-[125px] w-60 sm:w-96 rounded-xl flex flex-col justify-center relative">
         <h1 className="text-neutral-500 font-semibold text-sm">TODAY'S MONEY</h1>
         <h1 className="font-bold text-xl">$53,000</h1>

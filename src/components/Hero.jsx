@@ -16,7 +16,7 @@ function Hero() {
         <div className="px-3 ">
         </div>
         </div>
-      </div>
+      </div>  
       <div className=" p-4 bg-white h-[125px] w-60 sm:w-72 rounded-xl flex flex-col justify-center relative">
         <div className="">
         <div className="w-max">

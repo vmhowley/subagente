@@ -4,13 +4,14 @@ import Home from "./routes/Home";
 import SideBar from "./components/SideBar";
 import SubAgent from "./routes/SubAgent";
 import Navbar from "./components/NavBar";
+import { BarSide } from "./components/BarSide";
 
 function App() {
   return (
     <>
       <Router>
         <div className="bg-gradient-radial dark:to-slate-900 dark:from-slate-900 to-black via-red-950 from-red-800 w-full h-96 absolute top-0 left-0  opacity-95"></div>
-        <SideBar/>
+        <BarSide/>
         <Navbar />
         <div className="xl:pl-72 w-full pr-2 ">
         <Routes>

@@ -14,6 +14,6 @@ body{
     font-family: urbanist;
     padding: 0;
     margin: 0;
-    background: #FDF8EB;
+    background: #f8fdff;
     @apply dark:bg-slate-900 ;
 }

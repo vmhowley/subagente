@@ -9,7 +9,7 @@ function SideBarItems({ items, active }) {
 
   return (
     <li
-      className={`relative flex items-center py-2 px-3 my-1 h-14  rounded-md transition-all ease-in-out  duration-500 ${
+      className={`relative items-center py-2 px-3 my-1 h-14  rounded-md transition-all ease-in-out  duration-500 ${
         active ? "bg-blue-400 bg-opacity-10 font-semibold" : null
       }`}
     >

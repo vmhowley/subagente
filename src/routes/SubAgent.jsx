@@ -7,7 +7,7 @@ function SubAgent() {
 
   const sendResponse = (e) => {
     e.preventDefault();
-    if (!isNaN(numtar.value)  ){ 
+    if ( numtar.value.length === 16 ){ 
       setResponse({ ...response, message: '1245564', code: '002' });
       document.getElementById('ret-form').reset()
       
@@ -15,15 +15,7 @@ function SubAgent() {
       alert('llenar numero de tarjeta')
     }
      };
-  const handleChange = (e) => {
-    // Here we are checking if the length is equal to 10
-    if (e.target.value.length === 4) {
-      console.log(e.target.value);
-      document.getElementById("afil").focus();
-    }
-    setInput({ ...input, fec_venc: e.target.value });
-  };
-
+  
   return (
     <div className="grid p-2 ">
       <form
@@ -41,11 +33,11 @@ function SubAgent() {
             </label>
             <input
               className="appearance-none block w-full bg-gray-200 text-gray-700 dark:text-black border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-              onChange={(e) => setInput({ ...input, numta: e.target.value })}
               value={input.numta}
               id="numtar"
-              type="text"
+              type="number"
               placeholder="xxxx xxxx xxxx xxxx"
+              onChange={(e) => setInput({ ...input, numta: e.target.value })}
             />
           </div>
           <div className="w-full md:w-1/2 px-3">
@@ -185,15 +177,15 @@ function SubAgent() {
             >
               Codigo de respuesta
             </label>
-            <input
+            <p
               className="appearance-none block w-full bg-gray-200 text-gray-700 dark:text-black border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-              value={response.code}
+              value={response.code }
               id="grid-city"
-              type="text"
+              type="number"
               placeholder="---"
-            />
+            >{response.code}</p>
           </div>
-
+    
           <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
             <label
               className="block uppercase tracking-wide text-gray-700 dark:text-white text-xs font-bold mb-2"
@@ -201,12 +193,9 @@ function SubAgent() {
               >
               Numero de autorización
             </label>
-            <input
+            <p
               className="appearance-none block w-full bg-gray-200 text-gray-700 dark:text-black border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-              value={response.message}
-              id="grid-zip"
-              type="text"
-              />
+              >{response.message}</p>
           </div>
         </div>
       </div>

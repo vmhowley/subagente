@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 function Dropdown({ submenus, dropdown }) {
   return (
-    <ul className={`relative top-5 left-14 transition-all duration-500 ease-in-out transform  ${dropdown ? "show " : " hidden"}`} >
+    <ul className={`relative top-5 left-14 transition-all duration-500 ease-in-out transform w-max   ${dropdown ? "show " : " hidden"}`} >
         {submenus.map((submenu, index)=> ( 
 
             <li key={index}

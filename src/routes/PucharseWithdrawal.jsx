@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function SubAgent() {
+function PucharseWithdrawal() {
   const [input, setInput] = useState({});
   const [response, setResponse] = useState({});
 
@@ -97,7 +97,7 @@ function SubAgent() {
               className="appearance-none block w-full bg-gray-200 text-gray-700 dark:text-black border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               id="grid-last-name"
               type="text"
-              placeholder="Estacion de combustible"
+              placeholder="Estación de combustible"
             />
           </div>
           <div className="w-full md:w-1/2 px-3">
@@ -147,7 +147,7 @@ function SubAgent() {
                 className="block uppercase tracking-wide text-gray-700 dark:text-white text-xs font-bold mb-2"
                 htmlFor="grid-city"
               >
-                Codigo de respuesta
+                Código de respuesta
               </label>
               <p
                 className="appearance-none block w-full bg-gray-200 text-gray-700 dark:text-black border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
@@ -178,4 +178,4 @@ function SubAgent() {
   );
 }
 
-export default SubAgent;
+export default PucharseWithdrawal;

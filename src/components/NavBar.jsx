@@ -11,15 +11,24 @@ function Navbar() {
   }else{
     if(location.pathname == '/sub_agent'){
       Location = 'Sub Agentes'
+    }else{
+      if(location.pathname == '/tc_payment'){
+        Location = 'Pagos de Tarjeta'
+      }else{
+        if(location.pathname == '/pucharse_withdrawal'){
+          Location = 'Compras y Retiros'
+        }
     }
+  
+  }
   }
   return (
     <header className="flex p-6   ">
       <nav className="flex justify-between w-full">
         <div className="transition-all w-max sm:translate-x-0 flex-col  xl:translate-x-72 z-50 text-white font-extralight">
           <div className="flex gap-1 ">
-            <p className="text-zinc-200">{Location ? 'Pages/' : '' }  </p>
-            <h1>  {Location}</h1>
+            <p className="text-zinc-200">Pagina  </p>
+            <h1>  /{Location}</h1>
           </div>
           <h1 className="font-bold text-lg">{Location}</h1>
         </div>

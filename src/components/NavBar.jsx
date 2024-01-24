@@ -18,8 +18,8 @@ function Navbar() {
       <nav className="flex justify-between w-full">
         <div className="transition-all w-max sm:translate-x-0 flex-col  xl:translate-x-72 z-50 text-white font-extralight">
           <div className="flex gap-1 ">
-            <p className="text-zinc-200">Pages  </p>
-            <h1>  /{Location}</h1>
+            <p className="text-zinc-200">{Location ? 'Pages/' : '' }  </p>
+            <h1>  {Location}</h1>
           </div>
           <h1 className="font-bold text-lg">{Location}</h1>
         </div>

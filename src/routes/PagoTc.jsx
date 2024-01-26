@@ -2,7 +2,9 @@ import React from 'react'
 
 function PagoTc() {
   return (
-    <div>PagoTc</div>
+    <div>
+      <h1 className='text-black'>Hola</h1>
+    </div>
   )
 }
 

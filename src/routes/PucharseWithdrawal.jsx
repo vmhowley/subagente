@@ -19,7 +19,7 @@ function PucharseWithdrawal() {
       <form
         id="ret-form"
         onSubmit={sendResponse}
-        className="w-full max-w-6xl shadow-md bg-white dark:bg-slate-800  p-6 rounded-xl z-50"
+        className="w-full max-w-full shadow-md bg-white dark:bg-slate-800  p-6 rounded-xl z-50"
       >
         <div className="flex flex-wrap -mx-3 mb-6 justify-between">
           <div className="w-full md:w-1/4 px-3 mb-6 md:mb-0">

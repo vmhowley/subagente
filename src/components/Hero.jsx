@@ -3,7 +3,7 @@ import LocalAtmIcon from "@mui/icons-material/LocalAtm";
 function Hero() {
   return (
     <div className=" relative gap-3 grid sm:grid-cols-2 sm:place-items-center xl:flex justify-center">
-      <div className=" p-4 bg-white h-[125px] w-60 sm:w-80 md:w-96 rounded-xl flex flex-col justify-center relative">
+      <div className=" p-4 bg-white shadow-md h-[125px] w-60 sm:w-80 md:w-96 rounded-xl flex flex-col justify-center relative">
         <h1 className="text-neutral-600 font-semibold text-sm">
           TODAY'S MONEY
         </h1>
@@ -16,7 +16,7 @@ function Hero() {
           <LocalAtmIcon sx={{ color: "white" }} className="" />
         </div>
       </div>
-      <div className=" p-4 bg-white h-[125px] w-60 sm:w-80 md:w-96 rounded-xl flex flex-col justify-center relative">
+      <div className=" p-4 bg-white shadow-md h-[125px] w-60 sm:w-80 md:w-96 rounded-xl flex flex-col justify-center relative">
         <h1 className="text-neutral-600 font-semibold">TODAY'S USERS</h1>
         <h1 className="font-bold text-xl">3,100</h1>
         <div className="flex flex- gap-1">
@@ -27,7 +27,7 @@ function Hero() {
           <LocalAtmIcon sx={{ color: "white" }} className="" />
         </div>
       </div>
-      <div className=" p-4 bg-white h-[125px] w-60 sm:w-80 md:w-96 rounded-xl flex flex-col justify-center relative">
+      <div className=" p-4 bg-white shadow-md h-[125px] w-60 sm:w-80 md:w-96 rounded-xl flex flex-col justify-center relative">
         <h1 className="text-neutral-600 font-semibold">NEW CLIENTS</h1>
         <h1 className="font-bold text-xl">+100</h1>
         <div className="flex flex- gap-1">
@@ -38,7 +38,7 @@ function Hero() {
           <LocalAtmIcon sx={{ color: "white" }} className="" />
         </div>
       </div>
-      <div className=" p-4 bg-white h-[125px] w-60 sm:w-80 md:w-96 rounded-xl flex flex-col justify-center relative">
+      <div className=" p-4 bg-white shadow-md h-[125px] w-60 sm:w-80 md:w-96 rounded-xl flex flex-col justify-center relative">
         <h1 className="text-neutral-600 font-semibold">NEW CLIENTS</h1>
         <h1 className="font-bold text-xl">+100</h1>
         <div className="flex flex- gap-1">

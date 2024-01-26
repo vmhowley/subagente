@@ -12,7 +12,6 @@ function App() {
   return (
     <>
       <Router>
-        <div className="bg-gradient-radial dark:to-[#15202B] dark:from-[#15202B] to-black via-red-950 from-red-800 w-full h-96 absolute top-0 left-0  opacity-95"></div>
         <Navbar />
         <BarSide/>
         <div className="xl:pl-72 w-full pr-2 ">

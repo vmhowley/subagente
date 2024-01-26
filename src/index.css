@@ -15,7 +15,7 @@
     src: url(./assets/fonts/Urbanist-VariableFont_wght.ttf);
 }
 
-.sidebar{
+#sidebar{
 background: black !important;
 }
 

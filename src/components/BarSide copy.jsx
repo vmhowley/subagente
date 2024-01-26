@@ -19,17 +19,17 @@ import SideBarItems from "./SideBarItems"
 import PersonalVideoIcon from '@mui/icons-material/PersonalVideo'
 import GroupsIcon from '@mui/icons-material/GroupsOutlined'
 
- 
-  
 export const BarSide = () => {
   return (
-    <div className="fixed inset-y-0 flex-wrap items-center justify-between block w-full p-0 my-4 overflow-y-auto antialiased transition-transform duration-200 -translate-x-full  shadow-xl dark:bg-slate-850 max-w-64 ease-nav-brand z-990 xl:ml-6 rounded-2xl xl:left-0 xl:translate-x-0 ps z-10">
-      
-    <Sidebar  aria-label="Sidebar with multi-level dropdown">
-      {/* Logo */}
-      <Sidebar.Logo className="p-2 flex justify-center pb-8" img={Logo}/>
-      
-      <Sidebar.Items >
+    <aside className="fixed inset-y-0 flex-wrap items-center justify-between block w-full p-0 my-4 overflow-y-auto antialiased transition-transform duration-200 -translate-x-full bg-slate-500 dark:bg-[#192734] border-0 shadow-xl dark:bg-slate-850 max-w-64 ease-nav-brand z-990 xl:ml-6 rounded-2xl xl:left-0 xl:translate-x-0 ps z-10  ">
+      <nav className="" >
+        <div className=" p-6 shadow-lg  flex justify-between items-center">
+          <img src={Logo} alt=""  />
+          </div>
+        <hr className="pb-8"/>
+    <Sidebar className="!bg-black" aria-label="Sidebar with multi-level dropdown">
+
+      <Sidebar.Items className="">
         <Sidebar.ItemGroup >
             
               <Link to={'/'} className="flex pl-2 gap-3 hover:bg-slate-200 h-10 rounded-md items-center">
@@ -68,7 +68,7 @@ export const BarSide = () => {
         </Sidebar.ItemGroup>
       </Sidebar.Items>
     </Sidebar>
-
-    </div>
+    </nav>
+    </aside>
   );
 }

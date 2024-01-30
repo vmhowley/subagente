@@ -1,9 +1,9 @@
 import React from 'react'
-
+import PayTcForm from '../components/PayTcForm'
 function PagoTc() {
   return (
-    <div>
-      <h1 className='text-black'>Hola</h1>
+    <div className='pl-6'>
+      <PayTcForm/>
     </div>
   )
 }

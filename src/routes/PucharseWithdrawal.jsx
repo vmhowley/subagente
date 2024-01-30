@@ -71,7 +71,7 @@ function PucharseWithdrawal() {
               placeholder="311"
             />
           </div>
-          
+
           <div className="w-full md:w-1/2 px-3">
             <label
               className="block uppercase tracking-wide text-gray-700 dark:text-white text-xs font-bold mb-2"

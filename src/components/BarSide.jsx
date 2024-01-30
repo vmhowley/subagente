@@ -58,7 +58,7 @@ export const BarSide = () => {
               <Note  color='#536c7e' size={24}/> Cuadre Diario
               </Link>
              <Link to={'/'} className="flex  gap-3 hover:bg-slate-200 h-10 rounded-md items-center pl-8">
-              <CalendarX  color='#536c7e' size={24}/> Cierre
+              <CalendarX color='#536c7e' size={24}/> Cierre
               </Link>
           </Sidebar.Collapse>
           <Sidebar.Item href="#" icon={<Chat size={24} />}>

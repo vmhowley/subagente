@@ -43,7 +43,7 @@ Comando de prueba
 
 ## 🤝 Contributing
 
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](issues). You can also take a look at the [contributing guide](CONTRIBUTING.md).
+Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/vmhowley/subagente/issues). You can also take a look at the [contributing guide](CONTRIBUTING.md).
 
 ## Show your support
 

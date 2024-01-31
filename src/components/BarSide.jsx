@@ -1,74 +1,82 @@
-
-import { Sidebar } from "keep-react";
+import React from 'react'
+import { Sidebar } from 'keep-react'
 import {
   Chat,
-  Handbag,
-  Bank ,
-  FileSearch ,
-  Note ,
+  FileSearch,
+  Note,
   SquaresFour,
-  CalendarX ,
-  ArrowsLeftRight ,
+  CalendarX,
+  ArrowsLeftRight,
   CreditCard,
-  Receipt,
-} from "phosphor-react";
-import { Link  } from "react-router-dom"
-import Logo from "../assets/images/logo.png"
-import { useLocation } from "react-router-dom"
-import SideBarItems from "./SideBarItems"
-import PersonalVideoIcon from '@mui/icons-material/PersonalVideo'
+  Receipt
+} from 'phosphor-react'
+import Logo from '../assets/images/logo.png'
+import { Link } from 'react-router-dom'
 import GroupsIcon from '@mui/icons-material/GroupsOutlined'
 
- 
-  
 export const BarSide = () => {
   return (
-    <div className="fixed inset-y-0 flex-wrap items-center justify-between block w-full p-0 my-4 overflow-y-auto antialiased transition-transform duration-200 -translate-x-full  shadow-xl dark:bg-slate-850 max-w-64 ease-nav-brand z-990 xl:ml-6 rounded-2xl xl:left-0 xl:translate-x-0 ps z-10">
-      
-    <Sidebar  aria-label="Sidebar with multi-level dropdown">
-      {/* Logo */}
-      <Sidebar.Logo className="p-2 flex justify-center pb-8" img={Logo}/>
-      
-      <Sidebar.Items >
-        <Sidebar.ItemGroup >
-            
-              <Link to={'/'} className="flex pl-2 gap-3 hover:bg-slate-200 h-10 rounded-md items-center">
-              <SquaresFour color='#536c7e' size={24}/> Dashboard
+    <div className='fixed inset-y-0 flex-wrap items-center justify-between block w-full p-0 my-4 overflow-y-auto antialiased transition-transform duration-200 -translate-x-full  shadow-xl dark:bg-slate-850 max-w-64 ease-nav-brand z-990 xl:ml-6 rounded-2xl xl:left-0 xl:translate-x-0 ps z-10'>
+      <Sidebar aria-label='Sidebar with multi-level dropdown'>
+        {/* Logo */}
+        <Sidebar.Logo className='p-2 flex justify-center pb-8' img={Logo} />
+        <Sidebar.Items>
+          <Sidebar.ItemGroup>
+            <Link
+              to={'/'}
+              className='flex pl-2 gap-3 hover:bg-slate-200 h-10 rounded-md items-center'
+            >
+              <SquaresFour color='#536c7e' size={24} /> Resumen
+            </Link>
+            <Sidebar.Collapse
+              className='hover:bg-red-500'
+              color='#536c7e'
+              icon={<GroupsIcon fill='outlined' />}
+              label='Sub Agentes'
+            >
+              <Link
+                to={'/tc_payment'}
+                className='flex  gap-3 hover:bg-slate-200 h-9 rounded-md items-center pl-8'
+              >
+                <CreditCard color='#536c7e' size={24} /> Pago de Tarjeta
               </Link>
-            
-          <Sidebar.Collapse
-          className="hover:bg-red-500"
-          color="#536c7e"
-          icon={<GroupsIcon fill='outlined' />}
-          label="Sub Agentes"
-          >
-             <Link to={'/tc_payment'} className="flex  gap-3 hover:bg-slate-200 h-9 rounded-md items-center pl-8">
-              <CreditCard color='#536c7e' size={24}/> Pago de Tarjeta
+              <Link
+                to={'/'}
+                className='flex  gap-3 hover:bg-slate-200 h-10 rounded-md items-center pl-8'
+              >
+                <Receipt color='#536c7e' size={24} /> Pago de Préstamo
               </Link>
-             <Link to={'/'} className="flex  gap-3 hover:bg-slate-200 h-10 rounded-md items-center pl-8">
-              <Receipt  color='#536c7e' size={24}/> Pago de Préstamo
+              <Link
+                to={'/pucharse_withdrawal'}
+                className='flex  gap-3 hover:bg-slate-200 h-10 rounded-md items-center pl-8'
+              >
+                <ArrowsLeftRight color='#536c7e' size={24} /> Compra y Retiro
               </Link>
-             <Link to={'/pucharse_withdrawal'} className="flex  gap-3 hover:bg-slate-200 h-10 rounded-md items-center pl-8">
-              <ArrowsLeftRight  color='#536c7e' size={24}/> Compra y Retiro
+              <Link
+                to={'/'}
+                className='flex  gap-3 hover:bg-slate-200 h-10 rounded-md items-center pl-8'
+              >
+                <FileSearch color='#536c7e' size={24} /> Consultas del Dia
               </Link>
-             <Link to={'/'} className="flex  gap-3 hover:bg-slate-200 h-10 rounded-md items-center pl-8">
-              <FileSearch  color='#536c7e' size={24}/> Consultas del Dia
+              <Link
+                to={'/'}
+                className='flex  gap-3 hover:bg-slate-200 h-10 rounded-md items-center pl-8'
+              >
+                <Note color='#536c7e' size={24} /> Cuadre Diario
               </Link>
-             <Link to={'/'} className="flex  gap-3 hover:bg-slate-200 h-10 rounded-md items-center pl-8">
-              <Note  color='#536c7e' size={24}/> Cuadre Diario
+              <Link
+                to={'/'}
+                className='flex  gap-3 hover:bg-slate-200 h-10 rounded-md items-center pl-8'
+              >
+                <CalendarX color='#536c7e' size={24} /> Cierre
               </Link>
-             <Link to={'/'} className="flex  gap-3 hover:bg-slate-200 h-10 rounded-md items-center pl-8">
-              <CalendarX color='#536c7e' size={24}/> Cierre
-              </Link>
-          </Sidebar.Collapse>
-          <Sidebar.Item href="#" icon={<Chat size={24} />}>
-            Inbox
-          </Sidebar.Item>
-
-        </Sidebar.ItemGroup>
-      </Sidebar.Items>
-    </Sidebar>
-
+            </Sidebar.Collapse>
+            <Sidebar.Item href='#' icon={<Chat size={24} />}>
+              Inbox
+            </Sidebar.Item>
+          </Sidebar.ItemGroup>
+        </Sidebar.Items>
+      </Sidebar>
     </div>
-  );
+  )
 }

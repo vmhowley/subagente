@@ -21,6 +21,6 @@ background: black !important;
 
 body{
     font-family: urbanist;
-    background: #f5f6fc;
+    background: #ecf5f7b8;
     @apply dark:bg-[#15202B] ;
 }

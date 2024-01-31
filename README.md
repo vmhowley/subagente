@@ -1,7 +1,7 @@
 <h1 align="center">Welcome to Sub-Agentes Bancarios 👋</h1>
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-0.0.0-blue.svg?cacheSeconds=2592000" />
-  <a href="blob/main/DOCUMENTATION.md" target="_blank">
+  <a href="DOCUMENTATION.md" target="_blank">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
   </a>
   <a href="#" target="_blank">

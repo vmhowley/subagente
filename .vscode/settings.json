@@ -1,0 +1,22 @@
+{
+    "cSpell.enableFiletypes": [
+        "!c",
+        "!csharp",
+        "!elixir",
+        "!graphql",
+        "!handlebars",
+        "!haskell",
+        "!jade",
+        "!java",
+        "!jupyter",
+        "!less",
+        "!php",
+        "!pug",
+        "!python",
+        "!rust",
+        "!scss",
+        "rpg",
+        "rpgle",
+        "tailwindcss"
+    ]
+}

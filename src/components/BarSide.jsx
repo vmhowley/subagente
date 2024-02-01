@@ -16,8 +16,8 @@ import GroupsIcon from '@mui/icons-material/GroupsOutlined'
 
 export const BarSide = () => {
   return (
-    <div className='fixed inset-y-0 flex-wrap items-center justify-between block w-full p-0 my-4 overflow-y-auto antialiased transition-transform duration-200 -translate-x-full  shadow-xl dark:bg-slate-850 max-w-64 ease-nav-brand z-990 xl:ml-6 rounded-2xl xl:left-0 xl:translate-x-0 ps z-10'>
-      <Sidebar aria-label='Sidebar with multi-level dropdown'>
+    <div className='fixed  inset-y-0 flex-wrap items-center justify-between block w-full p-0 my-4 overflow-y-auto antialiased transition-transform duration-200 -translate-x-full  shadow-xl dark:bg-slate-850 max-w-64 ease-nav-brand -z-1 xl:ml-6 rounded-2xl xl:left-0 xl:translate-x-0 ps z-10'>
+      <Sidebar className='side' >
         {/* Logo */}
         <Sidebar.Logo className='p-2 flex justify-center pb-8' img={Logo} />
         <Sidebar.Items>
@@ -29,8 +29,7 @@ export const BarSide = () => {
               <SquaresFour color='#536c7e' size={24} /> Resumen
             </Link>
             <Sidebar.Collapse
-              className='hover:bg-red-500'
-              color='#536c7e'
+              className=''
               icon={<GroupsIcon fill='outlined' />}
               label='Sub Agentes'
             >

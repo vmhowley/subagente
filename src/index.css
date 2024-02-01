@@ -15,12 +15,12 @@
     src: url(./assets/fonts/Urbanist-VariableFont_wght.ttf);
 }
 
-#sidebar{
-background: black !important;
+
+
+body,html{
+  @apply bg-[#ecf5f7b8] dark:bg-[#101820] dark:text-white;
+    padding: 0;
+    margin: auto;
+    font-family: urbanist;
 }
 
-body{
-    font-family: urbanist;
-    background: #ecf5f7b8;
-    @apply dark:bg-[#15202B] ;
-}

@@ -1,11 +1,10 @@
 import React from 'react'
 import PayTcForm from '../components/PayTcForm'
-function PagoTc() {
+function PagoTc () {
   return (
-    <div className='pl-6'>
+    <div className='p-2'>
       <PayTcForm/>
     </div>
   )
 }
-
 export default PagoTc

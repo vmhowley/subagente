@@ -1,0 +1,9 @@
+h1{
+    @apply  dark:text-white !important; 
+  }
+  
+  p.text-neutral-600{
+    @apply dark:text-neutral-200 !important; 
+  }
+
+  

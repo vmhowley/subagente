@@ -5,7 +5,7 @@ function PayTcForm () {
     <form>
       <div className='bg-white p-4  rounded-md '>
         <div className='border-b border-gray-900/10 pb-12'>
-          <div className='mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-3 '>
+          <div className='mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-3 resize'>
             <div className='sm:col-span-1 '>
               <label
                 htmlFor='numtar'
@@ -24,7 +24,6 @@ function PayTcForm () {
                 />
               </div>
             </div>
-
             <div className='sm:col-span-1'>
               <label
                 htmlFor='moneda'

@@ -6,7 +6,6 @@
     input[type="number"]::-webkit-inner-spin-button,
     input[type="number"]::-webkit-outer-spin-button {
       -webkit-appearance: none;
-      margin: 0;
     }
   }
   
@@ -15,12 +14,10 @@
     src: url(./assets/fonts/Urbanist-VariableFont_wght.ttf);
 }
 
-
-
 body,html{
   @apply bg-[#ecf5f7b8] dark:bg-[#101820] dark:text-white;
     padding: 0;
-    margin: auto;
+    margin: 0 auto;
     font-family: urbanist;
 }
 

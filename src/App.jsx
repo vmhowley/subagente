@@ -13,7 +13,7 @@ function App () {
       <Router>
         <Navbar />
         <BarSide/>
-        <div className='xl:pl-72 w-full pr-2 '>
+        <div className='xl:pl-72  pr-2 '>
         <Routes>
           <Route path='/' element={<Home/>} />
           <Route path='/tc_payment' element={<PagoTc/>} />

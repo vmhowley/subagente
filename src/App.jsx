@@ -6,6 +6,7 @@ import PucharseWithdrawal from './routes/PucharseWithdrawal'
 import Navbar from './components/NavBar'
 import { BarSide } from './components/BarSide'
 import PagoTc from './routes/PagoTc'
+import Notfound from './routes/NotFound.jsx'
 
 function App () {
   return (
@@ -13,12 +14,12 @@ function App () {
       <Router>
         <Navbar />
         <BarSide/>
-        <div className='xl:pl-72  pr-2 '>
+        <div className='xl:ml-[305px] m-6 '>
         <Routes>
           <Route path='/' element={<Home/>} />
           <Route path='/tc_payment' element={<PagoTc/>} />
           <Route path='/pucharse_withdrawal' element={<PucharseWithdrawal/>} />
-          <Route path='*' element={<h1 className='flex relative'>Hola</h1> } />
+          <Route path='*' element={<Notfound/>} />
         </Routes>
         </div>
       </Router>

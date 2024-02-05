@@ -20,9 +20,9 @@ function Navbar () {
     }
   }
   return (
-    <header className='flex w-screen p-6 pl-2'>
+    <header className='flex w-screen pt-2 pl-2'>
       <nav className='flex justify-between  flex-row-reverse xl:flex-row pl-8 xl:pl-0'>
-        <div className='transition-all sm:translate-x-0  p-2 xl:translate-x-72 z-50 '>
+        <div className='transition-all sm:translate-x-0  p-2 xl:translate-x-72 z-40 '>
           <div className='flex gap-1'>
             <p className=''>Pagina </p>
             <h1> /{Location}</h1>

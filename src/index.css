@@ -11,8 +11,6 @@
 
 body{
   @apply bg-[#ecf5f7b8] dark:bg-[#101820] dark:text-white;
-    margin: 0 auto;
-    padding: 0;
     font-family: urbanist;
 }
 

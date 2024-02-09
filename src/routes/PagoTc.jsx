@@ -1,24 +1,24 @@
-import React, { useState } from "react";
-
+import React, { useState } from 'react'
+import Modal from '../components/Modal'
 function PagoTc () {
   const [type, setType] = useState('')
   const [data, setData] = useState({})
 
   function handleData (e) {
     console.log(data)
-    document.querySelector("input").value = data
+    setSubmit(true)
   }
+  const [submit, setSubmit] = useState()
 
-  function handleType() {
+  function handleType () {
     setType("reverso")
   }
 
   return (
     <>
-    <div className="justify-center grid w-full">
-      <form className="w-full max-w-6xl min-w-max">
-        <div className="bg-white shadow-md dark:bg-[#333b44] p-4 rounded-md">
-          <div className="border-b border-gray-900/10 pb-6">
+{submit && <Modal/>}
+    <div className="flex w-full  h- pl-60 pr-60 ">
+      <form onSubmit={(e) => handleData(e)} className="w-full shadow-md dark:bg-[#333b44] p-4 rounded-md bg-white">
             <div className="mt-10 sm:grid sm:grid-cols-2 gap-x-6 gap-y-8">
               <div className="sm:col-span-1">
                 <div className="mt-2 ">
@@ -28,8 +28,7 @@ function PagoTc () {
                     type="tel"
                     name="numtar"
                     id="numtar"
-                    pattern="[0-9\s]{13,19}"
-                    placeholder="Numero de Tarjeta"
+                    placeholder="Numero de Tarjeta Ej.(xxxx xxxx xxxx xxxx)"
                     autoComplete="numtar"
                     className="block w-full rounded-md border-0 py-1.5 text-slate-600 dark:text-white shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 ps-3"
                     value={data.tc}
@@ -85,9 +84,7 @@ function PagoTc () {
                 </div>
               </div>
             </div>
-          </div>
-
-        </div>
+            <input type='submit' value='submit'/>
       </form>
       </div>
     </>

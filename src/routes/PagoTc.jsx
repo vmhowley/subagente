@@ -14,13 +14,8 @@ function PagoTc () {
     setData('')
   }
 
-  const handleType = () => {
-    setType('reverso')
-  }
-
   return (
     <>
-    <Modal />
       <div className="flex w-full  xl:pl-36 xl:pr-36 ">
         <form
           onSubmit={(e) => handleData(e)}
@@ -40,7 +35,7 @@ function PagoTc () {
               <div className="mt-2 ">
               <label htmlFor="" className="font-bold">Numero de tarjeta</label>
                 <input
-                  onChange={(e) => setData({ ...data, tc: e.target.value })}
+                  onChange={e => setData({ ...data, tc: e.target.value })}
                   maxLength="16"
                   type="tel"
                   name="numtar"
@@ -48,6 +43,7 @@ function PagoTc () {
                   placeholder="Numero de Tarjeta Ej.(xxxx xxxx xxxx xxxx)"
                   autoComplete="numtar"
                   className="block w-full rounded-md border-0 py-1.5 text-slate-600 dark:text-white shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 ps-3"
+                  defaultValue={data.tc}
                 />
               </div>
             </div>
@@ -56,13 +52,14 @@ function PagoTc () {
               <label htmlFor="" className="font-bold">Moneda</label>
 
                 <input
-                  onChange={(e) => setData({ ...data, moneda: e.target.value })}
+                  onChange={e => setData({ ...data, moneda: e.target.value })}
                   type="text"
                   name="moneda"
                   id="moneda"
                   autoComplete="moneda"
                   placeholder="Moneda"
                   className="block w-full rounded-md border-0 py-1.5 text-slate-600 dark:text-white shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 ps-3"
+                  defaultValue={data.moneda}
                 />
               </div>
             </div>
@@ -70,20 +67,21 @@ function PagoTc () {
               <div className="mt-2">
                 <label htmlFor="" className="font-bold">Monto</label>
                 <input
-                  onChange={(e) => setData({ ...data, monto: e.target.value })}
+                  onChange={e => setData({ ...data, monto: e.target.value })}
                   id="monto"
                   name="monto"
                   type="monto"
                   autoComplete="monto"
                   placeholder="Monto"
                   className="block w-full rounded-md border-0 py-1.5 text-slate-600 dark:text-white shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 ps-3"
+                  defaultValue={data.monto}
                 />
               </div>
             </div>
             <div className={`sm:col-span-1 ${tab === 'reverso' ? 'hidden' : 'show'}`}>
               <div className="mt-2 grid ">
                 <label htmlFor="" className="font-bold">Forma de pago</label>
-                <select onChange={(e) => setData({ ...data, foma_pago: e.target.value })} className="block w-full rounded-md border-0 py-2 text-slate-600 dark:text-white shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 ps-2">
+                <select defaultValue={data.foma_pago} onChange={(e) => setData({ ...data, foma_pago: e.target.value })} className="block w-full rounded-md border-0 py-2 text-slate-600 dark:text-white shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 ps-2">
                   <option>Forma de pago</option>
                   <option value={1}>Efectivo</option>
                   <option value={2}>Cheque</option>
@@ -94,12 +92,13 @@ function PagoTc () {
               <div className="mt-2">
                 <input
                   onChange={(e) => setData({ ...data, cheque: e.target.value })}
-                  type="text"
+                  type="tel"
                   name="region"
                   id="region"
                   autoComplete="address-level1"
                   placeholder="Numero de Cheque"
                   className="block w-full rounded-md border-0 py-1.5 text-slate-600 dark:text-white shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 ps-3"
+                  defaultValue={data.cheque}
                 />
               </div>
             </div>
@@ -108,13 +107,14 @@ function PagoTc () {
               <label htmlFor="" className="font-bold">Numero de autorizacion</label>
 
                 <input
-                  onChange={(e) => setData({ ...data, autorizacion: e.target.value })}
+                  onChange={e => setData({ ...data, autorizacion: e.target.value })}
                   type="text"
                   name="autorizacion"
                   id="autorizacion"
                   autoComplete="aurotizacion"
                   placeholder="Numero de autorizacion"
                   className="block w-full rounded-md border-0 py-1.5 text-slate-600 dark:text-white shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 ps-3"
+                  defaultValue={data.autorizacion}
                 />
               </div>
             </div>

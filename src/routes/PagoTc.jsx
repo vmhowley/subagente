@@ -23,6 +23,20 @@ function PagoTc () {
     return errors
   }
 
+  function ccFormat (value) {
+    const v = value
+      .replace(/\s+/g, '')
+      .replace(/[^0-9]/gi, '')
+      .substr(0, 16)
+    const parts = []
+
+    for (let i = 0; i < v.length; i += 4) {
+      parts.push(v.substr(i, 4))
+    }
+
+    return parts.length > 1 ? parts.join(' ') : value
+  }
+
   const handleChange = (e) => {
     setData({ ...data, [e.target.name]: e.target.value })
   }
@@ -31,14 +45,17 @@ function PagoTc () {
     e.preventDefault()
     setErrors(validateValues(data))
     setSubmit(true)
+    finishSubmit()
   }
   const finishSubmit = () => {
     console.log(data)
-    console.log('hola')
+    document.getElementById('formi').reset()
+    setData(' ')
   }
 
   useEffect(() => {
     if (Object.keys(errors).length === 0 && submit) {
+      console.log('nose')
       finishSubmit()
     }
   }, [errors])
@@ -47,6 +64,7 @@ function PagoTc () {
     <>
       <div className="flex w-full  xl:pl-36 xl:pr-36 ">
         <form
+        id='formi'
         onSubmit={handleSubmit}
           className="w-full shadow-md dark:bg-[#333b44] p-4 rounded-md bg-white"
         >
@@ -64,54 +82,49 @@ function PagoTc () {
               <div className="mt-2 ">
               <label htmlFor="" className="font-bold">Numero de tarjeta</label>
                 <input
+                  value={ccFormat(data.numtar) ?? ''}
                   onChange={handleChange}
-                  maxLength="16"
                   type="tel"
+                  pattern="\d*"
+                  maxLength="19"
                   name="numtar"
                   id="numtar"
-                  placeholder="Numero de Tarjeta Ej.(xxxx xxxx xxxx xxxx)"
+                  placeholder="xxxx xxxx xxxx xxxx"
                   autoComplete="numtar"
                   className="block w-full rounded-md border-0 py-1.5 text-slate-600 dark:text-white shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 ps-3"
-                  defaultValue={data.numtar}
                 />
               </div>
             </div>
             <div className="sm:col-span-1">
               <div className="mt-2">
               <label htmlFor="" className="font-bold">Moneda</label>
-
-                <input
-                  onChange={handleChange}
-                  type="text"
-                  name="moneda"
-                  id="moneda"
-                  autoComplete="moneda"
-                  placeholder="Moneda"
-                  className="block w-full rounded-md border-0 py-1.5 text-slate-600 dark:text-white shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 ps-3"
-                  defaultValue={data.moneda}
-                />
+                <select name="moneda" id="moneda" value={data.moneda ?? ''} onChange={handleChange} className="block w-full rounded-md border-0 py-2 text-slate-600 dark:text-white shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 ps-2">
+                  <option>Seleccionar una moneda</option>
+                  <option value={214}>DOP</option>
+                  <option value={840}>USD</option>
+                </select>
               </div>
             </div>
             <div className="sm:col-span-1">
               <div className="mt-2">
                 <label htmlFor="" className="font-bold">Monto</label>
                 <input
+                  value={data.monto ?? ''}
                   onChange={handleChange}
                   id="monto"
                   name="monto"
                   type="monto"
                   autoComplete="monto"
-                  placeholder="Monto"
+                  placeholder="Digite el monto"
                   className="block w-full rounded-md border-0 py-1.5 text-slate-600 dark:text-white shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 ps-3"
-                  defaultValue={data.monto}
                 />
               </div>
             </div>
             <div className={`sm:col-span-1 ${tab === 'reverso' ? 'hidden' : 'show'}`}>
               <div className="mt-2 grid ">
                 <label htmlFor="" className="font-bold">Forma de pago</label>
-                <select name="forma_pago" id="forma_pago" defaultValue={data.forma_pago} onChange={handleChange} className="block w-full rounded-md border-0 py-2 text-slate-600 dark:text-white shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 ps-2">
-                  <option>Forma de pago</option>
+                <select name="forma_pago" id="forma_pago" value={data.forma_pago ?? ''} onChange={handleChange} className="block w-full rounded-md border-0 py-2 text-slate-600 dark:text-white shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 ps-2">
+                  <option>Seleccionar forma de pago</option>
                   <option value={1}>Efectivo</option>
                   <option value={2}>Cheque</option>
                 </select>
@@ -121,6 +134,7 @@ function PagoTc () {
               <div className="mt-2">
                 <label htmlFor="cheque" className='font-bold'>Numero de cheque</label>
                 <input
+                  value={data.cheque ?? ''}
                   onChange={handleChange}
                   type="tel"
                   name="cheque"
@@ -128,7 +142,6 @@ function PagoTc () {
                   autoComplete="numero-cheque"
                   placeholder="Numero de Cheque"
                   className="block w-full rounded-md border-0 py-1.5 text-slate-600 dark:text-white shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 ps-3"
-                  defaultValue={data.cheque}
                 />
               </div>
             </div>
@@ -137,14 +150,14 @@ function PagoTc () {
               <label htmlFor="" className="font-bold">Numero de autorizacion</label>
 
                 <input
+                  value={data.autorizacion ?? ''}
                   onChange={handleChange}
                   type="text"
                   name="autorizacion"
                   id="autorizacion"
-                  autoComplete="aurotizacion"
+                  autoComplete="autorizacion"
                   placeholder="Numero de autorizacion"
                   className="block w-full rounded-md border-0 py-1.5 text-slate-600 dark:text-white shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 ps-3"
-                  defaultValue={data.autorizacion}
                 />
               </div>
             </div>
@@ -157,5 +170,6 @@ function PagoTc () {
     </>
   )
 }
+
 
 export default PagoTc

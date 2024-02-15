@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Modal from '../components/Modal'
+import { motion } from 'framer-motion'
 
 function PagoTc () {
   const [type, setType] = useState('')
@@ -48,10 +49,10 @@ function PagoTc () {
     if (inputValues.monto.length === 0) {
       errors.monto = 'Favor llenar campo'
     }
-    if (inputValues.forma_pago === '2' && inputValues.cheque.length === 0) {
+    if (inputValues.forma_pago === '2' && inputValues.cheque.length === 0 && tab === 'pago') {
       errors.cheque = 'Favor llenar campo'
     }
-    if (inputValues.autorizacion.length === 0) {
+    if (inputValues.autorizacion.length === 0 && tab === 'reverso') {
       errors.autorizacion = 'Favor llenar campo'
     }
     return errors
@@ -72,7 +73,11 @@ function PagoTc () {
 
   return (
     <>
-      <div className="flex w-full  xl:pl-36 xl:pr-36 ">
+      <motion.div 
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    exit={{ opacity: 0 }} 
+      className="flex w-full  xl:pl-36 xl:pr-36 ">
         <form
         id='formi'
         onSubmit={handleSubmit}
@@ -139,7 +144,7 @@ function PagoTc () {
                 </select>
               </div>
             </div>
-            <div className={`col-span-1 ${data.forma_pago === '2' && tab === 'pago' ? 'show' : 'hidden'}`}>
+            <div className={`col-span-1 transition-all duration-500 ease-in-out transform ${data.forma_pago === '2' && tab === 'pago' ? 'show ' : 'hidden'}`}>
               <div className="mt-2">
                 <label htmlFor="cheque" className='font-semibold'>Numero de cheque</label>
                 <input
@@ -177,7 +182,7 @@ function PagoTc () {
           <button type="submit" value="submit" className="bg-red-300/20  h-10 font-semibold rounded-xl p-4 flex items-center  text-red-500">Agregar</button>
           </div>
         </form>
-      </div>
+      </motion.div>
     </>
   )
 }

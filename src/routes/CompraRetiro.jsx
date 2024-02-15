@@ -51,7 +51,7 @@ function CompraRetiro () {
     if (inputValues.forma_pago === '2' && inputValues.cheque.length === 0) {
       errors.cheque = 'Favor llenar campo'
     }
-    if (inputValues.autorizacion.length === 0) {
+    if (inputValues.autorizacion.length === 0 && tab === 'reverso') {
       errors.autorizacion = 'Favor llenar campo'
     }
     return errors

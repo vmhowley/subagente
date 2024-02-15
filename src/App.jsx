@@ -7,6 +7,7 @@ import Navbar from './components/NavBar'
 import { BarSide } from './components/BarSide'
 import PagoTc from './routes/PagoTc'
 import Notfound from './routes/NotFound.jsx'
+import CompraRetiro from './routes/CompraRetiro.jsx'
 function App () {
   return (
     <>
@@ -17,7 +18,7 @@ function App () {
         <Routes>
           <Route path='/' element={<Home/>} />
           <Route path='/tc_payment' element={<PagoTc/>} />
-          <Route path='/pucharse_withdrawal' element={<PucharseWithdrawal/>} />
+          <Route path='/pucharse_withdrawal' element={<CompraRetiro/>} />
           <Route path='*' element={<Notfound/>} />
         </Routes>
         </div>

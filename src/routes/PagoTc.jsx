@@ -3,12 +3,12 @@ import Modal from '../components/Modal'
 import { motion } from 'framer-motion'
 
 function PagoTc () {
-  const [type, setType] = useState('')
+  const [open, setOpen] = useState(false)
   const initialValue = {
     numtar: '',
     moneda: '',
     monto: '',
-    forma_pago: '',
+    forma_pago: '1',
     cheque: '',
     autorizacion: ''
   }
@@ -28,7 +28,7 @@ function PagoTc () {
   }
   const finishSubmit = () => {
     console.log(data)
-    setData(initialValue)
+    setOpen(true)
   }
 
   useEffect(() => {
@@ -73,21 +73,22 @@ function PagoTc () {
 
   return (
     <>
-      <motion.div 
+    {Object.keys(errors).length === 0 && submit ? <Modal open={open} setOpen={setOpen} data={data} setData={setData} /> : '' }
+      <motion.div
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
-    exit={{ opacity: 0 }} 
+    exit={{ opacity: 0 }}
       className="flex w-full  xl:pl-36 xl:pr-36 ">
         <form
         id='formi'
         onSubmit={handleSubmit}
           className="w-full shadow-md dark:bg-[#333b44] p-4 rounded-md bg-white"
         >
-          <div className="flex gap-5 h-11 font-semibold">
-            <div type="button" onClick={(e) => setTab('pago')} className={`rounded-lg w-20 cursor-pointer flex justify-center items-center ${tab === 'pago' ? 'bg-red-100/50  text-red-500/90' : ''} `}>
+          <div className="flex  h-11 font-semibold border shadow-sm w-max rounded-full">
+            <div type="button" onClick={(e) => setTab('pago')} className={`rounded-full w-20 cursor-pointer flex justify-center items-center ${tab === 'pago' ? 'bg-red-100/50  text-red-500/90' : ''} `}>
               Pago
             </div>
-            <div onClick={(e) => setTab('reverso')} className={`rounded-lg w-20 cursor-pointer flex justify-center items-center ${tab === 'reverso' ? ' bg-red-100/50  text-red-500/90' : ''} `} >
+            <div onClick={(e) => setTab('reverso')} className={`rounded-full w-20 cursor-pointer flex justify-center items-center ${tab === 'reverso' ? ' bg-red-100/50  text-red-500/90' : ''} `} >
               Reverso
             </div>
 

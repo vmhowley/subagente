@@ -2,9 +2,7 @@ import React, { Fragment, useRef, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { CheckIcon } from '@heroicons/react/24/outline'
 
-export default function Modal () {
-  const [open, setOpen] = useState(true)
-
+export default function Modal ({ open, setOpen, data }) {
   const cancelButtonRef = useRef(null)
 
   return (
@@ -45,20 +43,24 @@ export default function Modal () {
                       </Dialog.Title>
                       <div className="mt-2">
                         <p className="text-sm text-gray-500">
-                        Codigo de Respuesta: 001 <br />
+                          Numero de tarjeta:{data.numtar} <br />
+                          Moneda: {data.moneda} <br />
+                          Monto: {data.monto} <br />
+                          Forma de Pago:{data.forma_pago} <br/>
+                          Codigo de Respuesta: 001 <br />
                           Numero de autorizacion:4564654
                         </p>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div className="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+                <div className="bg-gray-50 px-4 py-3 sm:flex gap-2 sm:flex-row-reverse sm:px-6">
                   <button
                     type="button"
                     className="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
                     onClick={() => setOpen(false)}
                   >
-                    Ok
+                    Imprimir
                   </button>
                   <button
                     type="button"

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Modal from '../components/Modal'
-
+import { motion } from 'framer-motion'
 function CompraRetiro () {
   const [type, setType] = useState('')
   const initialValue = {
@@ -72,7 +72,11 @@ function CompraRetiro () {
 
   return (
     <>
-      <div className="flex w-full  xl:pl-36 xl:pr-36 ">
+      <motion.div
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    exit={{ opacity: 0 }}
+     className="flex w-full  xl:pl-36 xl:pr-36 ">
         <form
         id='formi'
         onSubmit={handleSubmit}
@@ -182,7 +186,7 @@ function CompraRetiro () {
           <button type="submit" value="submit" className="bg-red-300/20  h-10 font-semibold rounded-xl p-4 flex items-center  text-red-500">Agregar</button>
           </div>
         </form>
-      </div>
+      </motion.div>
     </>
   )
 }

@@ -76,7 +76,7 @@ function CompraRetiro () {
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
     exit={{ opacity: 0 }}
-     className="flex w-full  xl:pl-36 xl:pr-36 ">
+     className="flex w-full h-full  xl:pl-30 xl:pr-30 ">
         <form
         id='formi'
         onSubmit={handleSubmit}
@@ -91,8 +91,7 @@ function CompraRetiro () {
             </div>
 
           </div>
-          {Object.keys(errors).length === 0 && submit ? 'Formulario enviado' : '' }
-          <div className="mt-10 sm:grid sm:grid-cols-2 gap-x-6 gap-y-8 text-sm text-slate-600">
+          <div className="mt-10 grid grid-flow-col auto-cols-max gap-x-6 gap-y-8 text-sm text-slate-600">
             <div className="sm:col-span-1">
               <div className="mt-2 ">
               <label htmlFor="" className="font-semibold">Numero de tarjeta</label>
@@ -110,7 +109,21 @@ function CompraRetiro () {
               </div>
               <p className='text-red-500'>{errors.numtar}</p>
             </div>
-            <div className="sm:col-span-1">
+            <div className="sm:col-span-1 max-w-12">
+              <div className="mt-2">
+                <label htmlFor="cvv2" className="font-semibold">Cvv2</label>
+                <input
+                  value={data.cvv2 ?? ''}
+                  onChange={handleChange}
+                  id="cvv2"
+                  name="cvv2"
+                  type="tel"
+                  className="block w-full rounded-md border-0 py-1.5 text-slate-600 dark:text-white shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-red-600 sm:text-sm sm:leading-6 ps-3"
+                />
+              </div>
+              <p className='text-red-500'>{errors.monto}</p>
+            </div>
+            <div className="sm:col-span-1 ">
               <div className="mt-2">
               <label htmlFor="" className="font-semibold">Moneda</label>
                 <select name="moneda" id="moneda" value={data.moneda ?? ''} onChange={handleChange} className="block w-full rounded-md border-0 py-2 text-slate-600 dark:text-white shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-red-600 sm:text-sm sm:leading-6 ps-2">
@@ -129,20 +142,6 @@ function CompraRetiro () {
                   name="monto"
                   type="monto"
                   autoComplete="monto"
-                  className="block w-full rounded-md border-0 py-1.5 text-slate-600 dark:text-white shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-red-600 sm:text-sm sm:leading-6 ps-3"
-                />
-              </div>
-              <p className='text-red-500'>{errors.monto}</p>
-            </div>
-            <div className="sm:col-span-1">
-              <div className="mt-2">
-                <label htmlFor="cvv2" className="font-semibold">Cvv2</label>
-                <input
-                  value={data.monto ?? ''}
-                  onChange={handleChange}
-                  id="cvv2"
-                  name="cvv2"
-                  type="tel"
                   className="block w-full rounded-md border-0 py-1.5 text-slate-600 dark:text-white shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-red-600 sm:text-sm sm:leading-6 ps-3"
                 />
               </div>
@@ -183,7 +182,8 @@ function CompraRetiro () {
           <div className="w-full flex justify-center pt-6">
           </div>{' '}
           <div className='w-full flex justify-center'>
-          <button type="submit" value="submit" className="bg-red-300/20  h-10 font-semibold rounded-xl p-4 flex items-center  text-red-500">Agregar</button>
+          <button type="submit" value="submit" className={`h-10 font-semibold rounded-xl p-4 flex items-center ${Object.keys(errors).length === 0 && submit ? 'text-green-500 w-max p-2 rounded-full mt-4 bg-green-300/20 ' : 'bg-red-300/20 text-red-500'}>`}>{Object.keys(errors).length === 0 && submit ? 'Formulario enviado ✔' : 'Agregar' }
+</button>
           </div>
         </form>
       </motion.div>

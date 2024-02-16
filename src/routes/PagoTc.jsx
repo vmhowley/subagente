@@ -6,7 +6,7 @@ function PagoTc () {
   const [open, setOpen] = useState(false)
   const initialValue = {
     numtar: '',
-    moneda: '',
+    moneda: '214',
     monto: '',
     forma_pago: '1',
     cheque: '',
@@ -80,7 +80,6 @@ function PagoTc () {
     exit={{ opacity: 0 }}
       className="flex w-full  xl:pl-36 xl:pr-36 ">
         <form
-        id='formi'
         onSubmit={handleSubmit}
           className="w-full shadow-md dark:bg-[#333b44] p-4 rounded-md bg-white"
         >
@@ -94,7 +93,7 @@ function PagoTc () {
 
           </div>
           {Object.keys(errors).length === 0 && submit ? 'Formulario enviado' : '' }
-          <div className="mt-10 sm:grid sm:grid-cols-2 gap-x-6 gap-y-8 text-sm text-slate-600">
+          <div className="mt-10 sm:grid sm:grid-cols-3 grid grid-flow-cols gap-x-6 gap-y-8 text-sm text-slate-600 ">
             <div className="sm:col-span-1">
               <div className="mt-2 ">
               <label htmlFor="" className="font-semibold">Numero de tarjeta</label>
@@ -180,7 +179,8 @@ function PagoTc () {
           <div className="w-full flex justify-center pt-6">
           </div>{' '}
           <div className='w-full flex justify-center'>
-          <button type="submit" value="submit" className="bg-red-300/20  h-10 font-semibold rounded-xl p-4 flex items-center  text-red-500">Agregar</button>
+          <button type="submit" value="submit" className={`h-10 font-semibold rounded-xl p-4 flex items-center ${Object.keys(errors).length === 0 && submit ? 'text-green-500 w-max p-2 rounded-full mt-4 bg-green-300/20 ' : 'bg-red-300/20 text-red-500'}>`}>{Object.keys(errors).length === 0 && submit ? 'Formulario enviado ✔' : 'Agregar' }
+</button>
           </div>
         </form>
       </motion.div>
